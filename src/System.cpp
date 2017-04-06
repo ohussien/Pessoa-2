@@ -157,57 +157,7 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 
 
-	///////// debug code ////////////
-
-
-	//printf("just saved v\n");
-
-	// printf("$$$$$$ printing states inside targetset  at the beginning  $$$$ \n");
-	// gen11=Cudd_FirstCube(ddman,targetset,&testu,&value);
-	// if(!Cudd_IsGenEmpty(gen11))
-	//     {
-	//     	if(value>0.5)
-	//     	{
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// 	if(count==1)
-	// 		for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-	// }
-
-
-	// for(cubes=0;cubes<30;cubes++)
-	// if(!(Cudd_IsGenEmpty(gen11)))
-	// {
-	// suc11=Cudd_NextCube(gen11,&testu,&value);
-	// if(value>0.5){
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// 		if(count==1)
-	// 			for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-	// }
-
-	////// end of debugging code ///////////
-
-
 	////////////////////////////////  preprocessing the target set from {0,1} to {-1,0,1}  ///////////////
-
-
 
 
 	tmp1=Cudd_BddToAdd(ddman,targetset);
@@ -393,32 +343,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 		//printf("start the loop\n");
 
-		////////// debug code
-
-
-
-		// printf("----------------------------------------- printing states inside v_prev at the begining of iteration %d !!!!!!!!!!! \n",count);
-		// gen11=Cudd_FirstCube(ddman,v_prev,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<6;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		//}
-
-		////// end of debugging code ///////////
-
-
 		///////////////////  Update V ///////////////////
 
 
@@ -463,111 +387,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 		/////////////////  End of Update V ///////////////////
 
 
-
-		///////// debug code ////////////
-
-
-
-		// printf("$$$$$$ printing states inside V_prev  at iteration %d $$$$ \n",count);
-		// gen11=Cudd_FirstCube(ddman,v_prev,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-
-
-
-
-
-		// printf("$$$$$$ printing states inside V  at iteration %d $$$$ \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-			////// end of debugging code ///////////
-
-
-
-
 		if(Cudd_addLeq(ddman,v,v_prev) && Cudd_addLeq(ddman,v_prev,v))
 		{
 			printf("now v and v_prev are the same\n");
@@ -577,48 +396,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 
 		// printf("just finished update v in iteration number %d\n",count);
-
-
-		// 	///// debugging code to be removed /////
-		// if(count==1)
-		// {
-		// fp1=fopen("v1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"v1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("v2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"v2_test.bdd", NULL);
-		// }
-
-		// printf("####################################### printing states inside V  before changing from -1 0 1 for iteration number %d \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<6;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-			////// end of debugging code ///////////
 
 		/// old code due to using -1 0 1
 
@@ -634,58 +411,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 		//printf("about to get the set of states need to be discovered\n");
 
-
-		////////// debug code
-
-
-
-		// printf("####  printing states 1 1/2 0 inside V  at iteration %d ######## \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-
-		////// end of debugging code ///////////
 
 		int num_cubes=0;
 		vector<vector<int> > x_ref_new;
@@ -759,21 +484,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 
 
-
-     
-			//printf("--------------------- number of states =1/2  is  %d at iteration %d ---------------------\n",num_dc,count);
-
-
-		// for(i=0;i<x_ref_new.size();i++)
-		// 	{
-		// 		printf("x_ref_new[%d]=",i);
-		// 	for(j=0;j<nbitsx;j++)
-		// 	{
-		// 			printf("%d",x_ref_new[i][j]);
-		// 	}
-		// 	printf("\n");
-		// 	}
-
 		i=0;
      	refine_count_current=num_dc;
 
@@ -836,25 +546,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 		Cudd_RecursiveDeref(ddman,tmp2);
 
-		///// debug code
-
-
-
-
-		// printf("after expanding the states \n");
-		// for(i=0;i<x_ref_new.size();i++)
-		// 	{
-		// 		printf("x_ref_new[%d]=",i);
-		// 	for(j=0;j<nbitsx;j++)
-		// 	{
-		// 			printf("%d",x_ref_new[i][j]);
-		// 	}
-		// 	printf("\n");
-		// 	}
-
-
-
-		////// end debug ///////
 
 		/// old code due to using -1 0 1 in Trans
 
@@ -872,33 +563,9 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 
 		//// end of old code
 
+		
 		//printf("just started refine T\n");
 
-
-
-		//// debug ////////
-
-
-		// if(count==1)
-		// {
-		// fp1=fopen("trans_prev1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans_prev,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans_prev, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"trans_prev1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("trans_prev2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans_prev,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans_prev, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"trans_prev2_test.bdd", NULL);
-		// }
-
-		////// end debug ///////
 
 
 
@@ -1054,157 +721,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 		///////////////////  End of Refine T ///////////////////	
 
 
-
-
-		//// debugging code
-
-		// if(count==1)
-		// {
-		// fp1=fopen("t1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"t1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("t2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"t2_test.bdd", NULL);
-		// }
-
-
-		/////end of debugging code
-
-
-		// change T(x,u,x') values from  {1,1/2,0}  to {1,0,-1} 
-
-		/// old code due to using -1 0 1
-
-		//tmp1=Cudd_addApply(ddman,Cudd_addDivide,trans,cons2);
-		//Cudd_Ref(tmp1);
-
-		//Cudd_RecursiveDeref(ddman,trans);
-
-		//trans=Cudd_addApply(ddman,Cudd_addPlus,tmp1,cons);
-		//Cudd_Ref(trans);
-
-		//Cudd_RecursiveDeref(ddman,tmp1);
-
-
-		/// end of old code
-
-		//////// test iteration
-
-		//	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~We are in iteration %d and comparison leads to  %d %d~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",count,Cudd_addLeq(ddman,v,v_prev) ,Cudd_addLeq(ddman,v_prev,v));
-		/////debug code ///////////
-		if(count>0)
-		{	
-
-
-
-
-			///////// debug code ////////////
-
-
-			// //printf("just saved v\n");
-
-			// printf("$$$$$$ printing trans inside trans_prev  at iteration %d $$$$ \n",count);
-			// gen11=Cudd_FirstCube(ddman,trans_prev,&testu,&value);
-			// if(!Cudd_IsGenEmpty(gen11))
-			//     {
-			//     	if(value>0.2)
-			//     	{
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-
-			// for(cubes=0;cubes<30;cubes++)
-			// if(!(Cudd_IsGenEmpty(gen11)))
-			// {
-			// suc11=Cudd_NextCube(gen11,&testu,&value);
-			// if(value>0.2){
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-			// 	////// end of debugging code ///////////
-
-
-
-			// tmp1=Cudd_addApply(ddman,Cudd_addMinus,trans,cons);
-			// Cudd_Ref(tmp1);
-			// printf("$$$$$$ printing trans inside trans  at iteration %d $$$$ \n",count);
-			// gen11=Cudd_FirstCube(ddman,tmp1,&testu,&value);
-			// if(!Cudd_IsGenEmpty(gen11))
-			//     {
-			//     	if(value>0.5)
-			//     	{
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-
-			// for(cubes=0;cubes<30;cubes++)
-			// if(!(Cudd_IsGenEmpty(gen11)))
-			// {
-			// suc11=Cudd_NextCube(gen11,&testu,&value);
-			// if(value>0.5){
-
-
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-
-
-			// // for(k=0;k<n;k++){
-			// // 	test_x[k]=min[k];
-			// // 	for(jj=0;jj<nbits[k];jj++)
-			// // 		test_x[k]+=testu[k*nbits[0]+jj]<<jj;
-			// // 	test_x[k]=test_x[k]*eta;
-			// // 	printf("x[%d]=%f\n",k,test_x[k]);
-			// // 	}
-			// // 	for(k=0;k<m;k++){
-			// // 	u_oob[k]=min[k+n];
-			// // 	for(jj=0;jj<nbits[k+n];jj++)
-			// // 		u_oob[k]+=testu[nbitsx+jj]<<jj;
-			// // 	u_oob[k]=u_oob[k]*mu;
-			// // 	printf("u[%d]=%f\n",k,u_oob[k]);
-			// // }
-			// // printf("value=%f\n",value);
-			// }
-			// }
-			// Cudd_RecursiveDeref(ddman,tmp1);
-
-
-
-				////// end of debugging code ///////////
-
-
-
-		}
-
-
-
-
-
-		////// end of debug code //////////
-
-
-
-
-
 		if(Cudd_addLeq(ddman,v,v_prev) && Cudd_addLeq(ddman,v_prev,v))// && Cudd_addLeq(ddman,trans,trans_prev) && Cudd_addLeq(ddman,trans_prev,trans))
 		{	
 			fixed=1;
@@ -1213,68 +729,6 @@ void System::SynSafety1(DdManager* ddman,DdNode* targetset){
 		}		
 	}while(fixed != 1);
 	printf("number of iterations = %d and fixed = %d\n",count,fixed);
-
-	// 	fp1=fopen("v_test.dot", "w");
-	// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-	// 			fclose(fp1);
-	// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-	// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-	// 					"v_test.bdd", NULL);
-
-	////////// debug code
-
-
-
-	// printf("####################################### printing states inside V  finally !!!!!!!!!!! \n");
-
-
-
-	// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-	// if(!Cudd_IsGenEmpty(gen11))
-	//     {
-	//     	if(value>0.5)
-	//     	{
-
-	// 	for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	    
-	// printf("value=%f\n",value);
-	// }
-	// for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-
-
-	// for(cubes=0;cubes<200;cubes++)
-	// if(!(Cudd_IsGenEmpty(gen11)))
-	// {
-	// suc11=Cudd_NextCube(gen11,&testu,&value);
-	// if(value>0.5){
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// printf("value=%f\n",value);
-	// }
-	// for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-
-
-
-	////// end of debugging code ///////////
-
-
 
 	//printf("just finished safety1\n");
 
@@ -1336,55 +790,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 	u_oob=new double[m];
 
 	test_x=new double[n];
-
-
-
-	///////// debug code ////////////
-
-
-	//printf("just saved v\n");
-
-	// printf("$$$$$$ printing states inside targetset  at the beginning  $$$$ \n");
-	// gen11=Cudd_FirstCube(ddman,targetset,&testu,&value);
-	// if(!Cudd_IsGenEmpty(gen11))
-	//     {
-	//     	if(value>0.5)
-	//     	{
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// 	if(count==1)
-	// 		for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-	// }
-
-
-	// for(cubes=0;cubes<30;cubes++)
-	// if(!(Cudd_IsGenEmpty(gen11)))
-	// {
-	// suc11=Cudd_NextCube(gen11,&testu,&value);
-	// if(value>0.5){
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// 		if(count==1)
-	// 			for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-	// }
-
-	////// end of debugging code ///////////
 
 
 	////////////////////////////////  preprocessing the target set from {0,1} to {-1,0,1}  ///////////////
@@ -1575,32 +980,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 
 		//printf("start the loop\n");
 
-		////////// debug code
-
-
-
-		// printf("----------------------------------------- printing states inside v_prev at the begining of iteration %d !!!!!!!!!!! \n",count);
-		// gen11=Cudd_FirstCube(ddman,v_prev,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<6;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		//}
-
-		////// end of debugging code ///////////
-
-
 		///////////////////  Update V ///////////////////
 
 
@@ -1645,111 +1024,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 		/////////////////  End of Update V ///////////////////
 
 
-
-		///////// debug code ////////////
-
-
-
-		// printf("$$$$$$ printing states inside V_prev  at iteration %d $$$$ \n",count);
-		// gen11=Cudd_FirstCube(ddman,v_prev,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-
-
-
-
-
-		// printf("$$$$$$ printing states inside V  at iteration %d $$$$ \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-			////// end of debugging code ///////////
-
-
-
-
 		if(Cudd_addLeq(ddman,v,v_prev) && Cudd_addLeq(ddman,v_prev,v))
 		{
 			printf("now v and v_prev are the same\n");
@@ -1757,50 +1031,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 			break;
 		}
 
-
-		// printf("just finished update v in iteration number %d\n",count);
-
-
-		// 	///// debugging code to be removed /////
-		// if(count==1)
-		// {
-		// fp1=fopen("v1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"v1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("v2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"v2_test.bdd", NULL);
-		// }
-
-		// printf("####################################### printing states inside V  before changing from -1 0 1 for iteration number %d \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<6;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// for(jj=0;jj<totbits;jj++)
-		//     printf("testu[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-			////// end of debugging code ///////////
 
 		/// old code due to using -1 0 1
 
@@ -1815,59 +1045,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 		// end of old code
 
 		//printf("about to get the set of states need to be discovered\n");
-
-
-		////////// debug code
-
-
-
-		// printf("####  printing states 1 1/2 0 inside V  at iteration %d ######## \n",count);
-		// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-		// if(!Cudd_IsGenEmpty(gen11))
-		//     {
-		//     	if(value>0.2)
-		//     	{
-
-		// 	for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		    
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-		// for(cubes=0;cubes<30;cubes++)
-		// if(!(Cudd_IsGenEmpty(gen11)))
-		// {
-		// suc11=Cudd_NextCube(gen11,&testu,&value);
-		// if(value>0.2){
-		// for(k=0;k<n;k++){
-		// 	test_x[k]=min[k];
-		// 	for(jj=0;jj<nbits[k];jj++)
-		// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-		// 	test_x[k]=test_x[k]*eta;
-		// 	printf("x[%d]=%f\n",k,test_x[k]);
-		// 	}
-		// printf("value=%f\n",value);
-		// }
-		// for(jj=0;jj<nbitsx;jj++)
-		// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-		// printf("value=%f\n",value);
-		// }
-
-
-
-
-
-		////// end of debugging code ///////////
 
 		int num_cubes=0;
 		vector<vector<int> > x_ref_new;
@@ -1940,22 +1117,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 	   	}
 
 
-
-
-     
-			//printf("--------------------- number of states =1/2  is  %d at iteration %d ---------------------\n",num_dc,count);
-
-
-		// for(i=0;i<x_ref_new.size();i++)
-		// 	{
-		// 		printf("x_ref_new[%d]=",i);
-		// 	for(j=0;j<nbitsx;j++)
-		// 	{
-		// 			printf("%d",x_ref_new[i][j]);
-		// 	}
-		// 	printf("\n");
-		// 	}
-
 		i=0;
      	refine_count_current=num_dc;
 
@@ -2017,71 +1178,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 					x_ref_new[i][j]=0;
 
 		Cudd_RecursiveDeref(ddman,tmp2);
-
-		///// debug code
-
-
-
-
-		// printf("after expanding the states \n");
-		// for(i=0;i<x_ref_new.size();i++)
-		// 	{
-		// 		printf("x_ref_new[%d]=",i);
-		// 	for(j=0;j<nbitsx;j++)
-		// 	{
-		// 			printf("%d",x_ref_new[i][j]);
-		// 	}
-		// 	printf("\n");
-		// 	}
-
-
-
-		////// end debug ///////
-
-		/// old code due to using -1 0 1 in Trans
-
-		// change T(x,u,x') values from {1,0,-1} to {1,1/2,0}
-
-		//tmp1=Cudd_addApply(ddman,Cudd_addMinus,trans_prev,cons);
-		//Cudd_Ref(tmp1);
-
-		//Cudd_RecursiveDeref(ddman,trans_prev);
-
-		//trans_prev=Cudd_addApply(ddman,Cudd_addTimes,tmp1,cons2);
-		//Cudd_Ref(trans_prev);
-
-		//Cudd_RecursiveDeref(ddman,tmp1);
-
-		//// end of old code
-
-		//printf("just started refine T\n");
-
-
-
-		//// debug ////////
-
-
-		// if(count==1)
-		// {
-		// fp1=fopen("trans_prev1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans_prev,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans_prev, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"trans_prev1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("trans_prev2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans_prev,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans_prev, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"trans_prev2_test.bdd", NULL);
-		// }
-
-		////// end debug ///////
-
 
 
 		///////////////////  Refine T ///////////////////
@@ -2236,157 +1332,6 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 		///////////////////  End of Refine T ///////////////////	
 
 
-
-
-		//// debugging code
-
-		// if(count==1)
-		// {
-		// fp1=fopen("t1_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"t1_test.bdd", NULL);
-		// }
-		// if(count==2)
-		// {
-		// fp1=fopen("t2_test.dot", "w");
-		// 			Cudd_DumpDot(ddman, numroots_design, &trans,NULL,NULL,fp1); 
-		// 			fclose(fp1);
-		// Dddmp_cuddAddStore(ddman, NULL, trans, NULL,
-		// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-		// 					"t2_test.bdd", NULL);
-		// }
-
-
-		/////end of debugging code
-
-
-		// change T(x,u,x') values from  {1,1/2,0}  to {1,0,-1} 
-
-		/// old code due to using -1 0 1
-
-		//tmp1=Cudd_addApply(ddman,Cudd_addDivide,trans,cons2);
-		//Cudd_Ref(tmp1);
-
-		//Cudd_RecursiveDeref(ddman,trans);
-
-		//trans=Cudd_addApply(ddman,Cudd_addPlus,tmp1,cons);
-		//Cudd_Ref(trans);
-
-		//Cudd_RecursiveDeref(ddman,tmp1);
-
-
-		/// end of old code
-
-		//////// test iteration
-
-		//	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~We are in iteration %d and comparison leads to  %d %d~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",count,Cudd_addLeq(ddman,v,v_prev) ,Cudd_addLeq(ddman,v_prev,v));
-		/////debug code ///////////
-		if(count>0)
-		{	
-
-
-
-
-			///////// debug code ////////////
-
-
-			// //printf("just saved v\n");
-
-			// printf("$$$$$$ printing trans inside trans_prev  at iteration %d $$$$ \n",count);
-			// gen11=Cudd_FirstCube(ddman,trans_prev,&testu,&value);
-			// if(!Cudd_IsGenEmpty(gen11))
-			//     {
-			//     	if(value>0.2)
-			//     	{
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-
-			// for(cubes=0;cubes<30;cubes++)
-			// if(!(Cudd_IsGenEmpty(gen11)))
-			// {
-			// suc11=Cudd_NextCube(gen11,&testu,&value);
-			// if(value>0.2){
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-			// 	////// end of debugging code ///////////
-
-
-
-			// tmp1=Cudd_addApply(ddman,Cudd_addMinus,trans,cons);
-			// Cudd_Ref(tmp1);
-			// printf("$$$$$$ printing trans inside trans  at iteration %d $$$$ \n",count);
-			// gen11=Cudd_FirstCube(ddman,tmp1,&testu,&value);
-			// if(!Cudd_IsGenEmpty(gen11))
-			//     {
-			//     	if(value>0.5)
-			//     	{
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-			// }
-			// }
-
-
-			// for(cubes=0;cubes<30;cubes++)
-			// if(!(Cudd_IsGenEmpty(gen11)))
-			// {
-			// suc11=Cudd_NextCube(gen11,&testu,&value);
-			// if(value>0.5){
-
-
-			// 	for(jj=0;jj<totbits;jj++)
-			//     printf("testu[%d]=%d\n",jj,testu[jj]);
-			// printf("value=%f\n",value);
-
-
-			// // for(k=0;k<n;k++){
-			// // 	test_x[k]=min[k];
-			// // 	for(jj=0;jj<nbits[k];jj++)
-			// // 		test_x[k]+=testu[k*nbits[0]+jj]<<jj;
-			// // 	test_x[k]=test_x[k]*eta;
-			// // 	printf("x[%d]=%f\n",k,test_x[k]);
-			// // 	}
-			// // 	for(k=0;k<m;k++){
-			// // 	u_oob[k]=min[k+n];
-			// // 	for(jj=0;jj<nbits[k+n];jj++)
-			// // 		u_oob[k]+=testu[nbitsx+jj]<<jj;
-			// // 	u_oob[k]=u_oob[k]*mu;
-			// // 	printf("u[%d]=%f\n",k,u_oob[k]);
-			// // }
-			// // printf("value=%f\n",value);
-			// }
-			// }
-			// Cudd_RecursiveDeref(ddman,tmp1);
-
-
-
-				////// end of debugging code ///////////
-
-
-
-		}
-
-
-
-
-
-		////// end of debug code //////////
-
-
-
-
-
 		if(Cudd_addLeq(ddman,v,v_prev) && Cudd_addLeq(ddman,v_prev,v))// && Cudd_addLeq(ddman,trans,trans_prev) && Cudd_addLeq(ddman,trans_prev,trans))
 		{	
 			fixed=1;
@@ -2396,69 +1341,7 @@ void System::SynReach1(DdManager* ddman,DdNode* targetset)
 	}while(fixed != 1);
 	printf("number of iterations = %d and fixed = %d\n",count,fixed);
 
-	// 	fp1=fopen("v_test.dot", "w");
-	// 			Cudd_DumpDot(ddman, numroots_design, &v,NULL,NULL,fp1); 
-	// 			fclose(fp1);
-	// Dddmp_cuddAddStore(ddman, NULL, v, NULL,
-	// 					NULL, DDDMP_MODE_TEXT, DDDMP_VARIDS,
-	// 					"v_test.bdd", NULL);
-
-	////////// debug code
-
-
-
-	// printf("####################################### printing states inside V  finally !!!!!!!!!!! \n");
-
-
-
-	// gen11=Cudd_FirstCube(ddman,v,&testu,&value);
-	// if(!Cudd_IsGenEmpty(gen11))
-	//     {
-	//     	if(value>0.5)
-	//     	{
-
-	// 	for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	    
-	// printf("value=%f\n",value);
-	// }
-	// for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-
-
-	// for(cubes=0;cubes<200;cubes++)
-	// if(!(Cudd_IsGenEmpty(gen11)))
-	// {
-	// suc11=Cudd_NextCube(gen11,&testu,&value);
-	// if(value>0.5){
-	// for(k=0;k<n;k++){
-	// 	test_x[k]=min[k];
-	// 	for(jj=0;jj<nbits[k];jj++)
-	// 		test_x[k]+=testu[k*nbits[0]+jj]<<(nbits[k]-jj-1);
-	// 	test_x[k]=test_x[k]*eta;
-	// 	printf("x[%d]=%f\n",k,test_x[k]);
-	// 	}
-	// printf("value=%f\n",value);
-	// }
-	// for(jj=0;jj<nbitsx;jj++)
-	// 		printf("x_ref[%d]=%d\n",jj,testu[jj]);
-	// printf("value=%f\n",value);
-	// }
-
-
-
-	////// end of debugging code ///////////
-
-
-
-	//printf("just finished safety1\n");
+	//printf("just finished Reach1\n");
 
 	delete u_oob;
 	delete permutation;
@@ -2617,12 +1500,6 @@ for(i=0;i<m;i++){
 jj=0;
 
 
-
-// for(i=0;i<n;i++)
-// 	printf("x[%d]=%f\n",i,x[i]);
-// for(i=0;i<m;i++)
-// 	printf("u[%d]=%f\n",i,u[i]);
-
 double* xend=new double[n];
 
 double* max_val=new double[n];
@@ -2638,27 +1515,6 @@ int* min_label_temp=new int[n];
 double* eta_new=new double[n];
 
 ///////////// simulate the point /////////
-
-
-// double integrator
-
-
-
-// xend[0]=x[0]+x[1]*tau+u[0]*tau*tau;
-// xend[1]=x[1]+u[0]*tau;
-
-// eta_new[0]=0.5*eta*(1+tau);
-// eta_new[1]=0.5*eta;
-
-// for(i=0;i<n;i++){
-// 	max_val[i]=xend[i]+eta_new[i];
-// 	min_val[i]=xend[i]-eta_new[i];
-// }
-
-
-
-///// end of double integrator
-
 
 // unicycle
 
@@ -2775,13 +1631,6 @@ for(i=0;i<n;i++){
 		min_label[i]=ceil(min_val[i]/eta)-min[i];
 }
 
-// for(i=0;i<n;i++)
-// 	printf("min_label[%d]=%d\n",i,min_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max_label[%d]=%d\n",i,max_label[i]);
-
-
 // if out of domain for now set it to the boundary
 for(i=0;i<n;i++)
 	if(min_label[i]<0)
@@ -2802,17 +1651,9 @@ for(i=0;i<n;i++)
 	min_label_temp[i]=min_label[i];
 
 
-// for(i=0;i<n;i++)
-// 	printf("min_label[%d]=%d \n",i,min_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max_label[%d]=%d \n",i,max_label[i]);
-
-
 k=1;
 ntrans=0;
 
-//printf("start adding labels\n");
 
 while(k<n && min_label_temp[n-1]<=max_label[n-1]){
 
@@ -2835,19 +1676,6 @@ for(i=0;i<n;i++)
 for(i=nbitsloop;i<totbits;i++)
 current_trans[i]=xend_temp[i-nbitsloop];
 
-//for(i=0;i<n;i++)
-//	printf("min_label[%d]=%d \n",i,min_label[i]);
-
-//for(i=0;i<n;i++)
-//	printf("max_label[%d]=%d \n",i,max_label[i]);
-//printf("k=%d n=%d min_label_temp[n]=%d  max_label[n]=%d \n",k,n,min_label_temp[n-1],max_label[n-1]);
-
-
-//for(i=0;i<n;i++)
-//	printf("min_label_temp[%d]=%d \n",i,min_label_temp[i]);
-// for(i=0;i<totbits;i++)
-// 	printf("current_trans[%d]=%d \n",i,current_trans[i]);
-//printf("creating a cube for the transition\n");
 	tmp1 = Cudd_CubeArrayToBdd(ddman,current_trans);
 	Cudd_Ref(tmp1);
 
@@ -2875,90 +1703,6 @@ current_trans[i]=xend_temp[i-nbitsloop];
 
 }
 //printf("number of transitions added %d\n",ntrans);
-if(ntrans==0)
-{
-
-// 	printf("number of transitions added %d\n",ntrans);
-// printf("k=%d n=%d min_label_temp[n]=%d  max_label[n]=%d \n",k,n,min_label_temp[n-1],max_label[n-1]);
-// for(i=0;i<n;i++)
-// 	printf("x[%d]=%f\n",i,x[i]);
-// for(i=0;i<n;i++){
-// 	printf("x_ref[%d]=",i);
-// 	for(j=0;j<nbits[i];j++)
-// 		printf("%d",x_ref[i*nbits[0]+j]);
-// 	printf("\n");
-// }
-
-// for(i=0;i<m;i++)
-// 	printf("u[%d]=%f\n",i,u[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("min_label[%d]=%d \n",i,min_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max_label[%d]=%d \n",i,max_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("min[%d]=%f\n",i,min_val[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max[%d]=%f\n",i,max_val[i]);
-
-
-
-}
-
-// printf("number of transitions added %d\n",ntrans);
-// printf("k=%d n=%d min_label_temp[n]=%d  max_label[n]=%d \n",k,n,min_label_temp[n-1],max_label[n-1]);
-// for(i=0;i<n;i++)
-// 	printf("min_global[%d]=%d\n",i,min[i]);
-// 	for(i=0;i<n;i++)
-// 	printf("max_global[%d]=%d\n",i,max[i]);
-// for(i=0;i<n;i++)
-// 	printf("x[%d]=%f\n",i,x[i]);
-// for(i=0;i<n;i++){
-// 	printf("x_ref[%d]=",i);
-// 	for(j=0;j<nbits[i];j++)
-// 		printf("%d",x_ref[i*nbits[0]+j]);
-// 	printf("\n");
-// 	}
-// 	k=nbitsx;
-// for(i=0;i<m;i++){
-// 	printf("u_ref[%d]=",i);
-
-// 	for(j=0;j<nbits[i+n];j++)
-// 		printf("%d",u_ref[k+j]);
-// 		// for(j=0;j<totbits;j++)
-// 		// printf("%d",u_ref[j]);
-// 	printf("\n");
-// 	k+=nbits[i+n];
-// 	}
-
-
-
-// for(i=0;i<m;i++)
-// 	printf("u[%d]=%f\n",i,u[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("min_label[%d]=%d \n",i,min_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max_label[%d]=%d \n",i,max_label[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("min[%d]=%f\n",i,min_val[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("max[%d]=%f\n",i,max_val[i]);
-
-// for(i=0;i<n;i++)
-// 	printf("mod function max[%d]=%f\n",i,fmod(max_val[i],eta));
-
-// for(i=0;i<n;i++)
-// 	printf("mod function min[%d]=%f\n",i,fmod(min_val[i],eta));
-
-// printf("number of transitions added %d\n",ntrans);
-
 
 delete xend;
 delete max_val;
