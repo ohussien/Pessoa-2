@@ -64,10 +64,6 @@ System::System(int n_in, int m_in, double tau_in, double eta_in, double mu_in,do
 		nbits[i+m+n]=k;
 
 	}
-	for(i=0;i<n;i++){
-//	printf("min[%d]=%f \t",i,dxmin[i]);
-//	printf("max[%d]=%f \n",i,dxmax[i]);
-}
 	j=0;
 	for(i=n;i<n+m;i++)
 	{
